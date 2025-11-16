@@ -52,44 +52,4 @@
                 }
             });
         });
-        // Handle Contact Form
-        const contactForm = document.getElementById('contact-form');
-        const formSuccess = document.getElementById('form-success');
-        const formError = document.getElementById('form-error');
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // Simulate form submission
-            try {
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                
-                // Show success message
-                formSuccess.classList.remove('hidden');
-                formError.classList.add('hidden');
-                contactForm.reset();
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    formSuccess.classList.add('hidden');
-                }, 5000);
-                
-            } catch (error) {
-                // Show error message
-                formError.classList.remove('hidden');
-                formSuccess.classList.add('hidden');
-                
-                // Hide error message after 5 seconds
-                setTimeout(() => {
-                    formError.classList.add('hidden');
-                }, 5000);
-            }
-        });
+        
